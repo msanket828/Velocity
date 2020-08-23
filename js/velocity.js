@@ -45,3 +45,20 @@ menu.addEventListener('click',function() {
 		body.classList.add("overflow");
 	}
 })
+
+
+var link=document.querySelectorAll('nav a');
+
+link.forEach(function(link){
+	link.addEventListener('click',function() {
+		var c=nav.classList.contains('hidenav');
+		if(!c) {
+			nav.classList.add('hidenav');
+			body.classList.remove("overflow");
+		}
+		c=menu.classList.contains("active-menu");
+		if(c) {
+			menu.classList.remove("active-menu");
+		}
+	})
+})
